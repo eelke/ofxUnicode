@@ -27,7 +27,7 @@ This addon employs the following 3rd party libraries:
 
 ## Getting Started
 
-To build and install the 3rd party libraries, run `scripts/build.sh`.
+To build and install the 3rd party libraries, run `./scripts/bootstrap.sh`.
 
 To get started, generate the example project files using the openFrameworks [Project Generator](http://openframeworks.cc/learning/01_basics/how_to_add_addon_to_project/).
 
@@ -37,7 +37,7 @@ API documentation can be found here.
 
 ## Build Status
 
-Linux, macOS [![Build Status](https://travis-ci.org/bakercp/ofxUnicode.svg?branch=master)](https://travis-ci.org/bakercp/ofxHTTP)
+Linux, macOS [![Build Status](https://travis-ci.org/bakercp/ofxUnicode.svg?branch=master)](https://travis-ci.org/bakercp/ofxUnicode)
 
 Visual Studio, MSYS [![Build status](https://ci.appveyor.com/api/projects/status/cvahckay2t65tl2x/branch/master?svg=true)](https://ci.appveyor.com/project/bakercp/ofxunicode/branch/master)
 
