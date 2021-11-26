@@ -43,9 +43,9 @@ function build() {
 		# Don't forget the CXXFLAGS for the c++ components.
 		./configure PKG_CONFIG="$BUILD_ROOT_DIR/bin/pkg-config" \
 					PKG_CONFIG_PATH="$BUILD_ROOT_DIR/lib/pkgconfig" \
-					LDFLAGS="-arch i386 -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
-					CFLAGS="-Os -arch i386 -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
-					CXXFLAGS="-Os -arch i386 -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
+					LDFLAGS="-stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
+					CFLAGS="-Os -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
+					CXXFLAGS="-Os -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
 					HARFBUZZ_CFLAGS="`$BUILD_ROOT_DIR/bin/./pkg-config --cflags harfbuzz`" \
 					HARFBUZZ_LIBS="`$BUILD_ROOT_DIR/bin/./pkg-config --libs harfbuzz`" \
 					FREETYPE_CFLAGS="`$BUILD_ROOT_DIR/bin/./pkg-config --cflags freetype2 libpng`" \
@@ -53,6 +53,7 @@ function build() {
 					FRIBIDI_CFLAGS="`$BUILD_ROOT_DIR/bin/./pkg-config --cflags fribidi`" \
 					FRIBIDI_LIBS="`$BUILD_ROOT_DIR/bin/./pkg-config --libs fribidi`" \
 					--prefix=$BUILD_ROOT_DIR \
+					--disable-Werror \
 					--disable-dependency-tracking \
 					--enable-introspection=yes \
 					--enable-static=yes \
@@ -61,6 +62,7 @@ function build() {
 					--disable-gtk-doc-html \
 					--with-glib=no \
 					--with-gobject=no
+
   else
 		./configure \
 		--prefix=$BUILD_ROOT_DIR \

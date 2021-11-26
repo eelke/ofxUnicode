@@ -29,8 +29,8 @@ function build() {
 
 	if [ "$TYPE" == "osx" ] ; then
 		# set flags for osx 32 & 64 bit fat lib
-		./configure LDFLAGS="-arch i386 -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
-					CFLAGS="-Os -arch i386 -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
+		./configure LDFLAGS="-stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
+					CFLAGS="-Os -stdlib=libstdc++ -arch x86_64 -Xarch_x86_64 -stdlib=libc++" \
 					--prefix=$BUILD_ROOT_DIR \
 					--with-glib=no \
 					--disable-shared
